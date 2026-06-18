@@ -10,29 +10,29 @@ body {
     background: #fcf8f0;
     color: #4e342e;
     line-height: 1.6;
-    padding: 30px 20px;
+    padding: 20px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* --- CONTENEDOR PRINCIPAL (TRES COLUMNAS) --- */
+/* --- CONTENEDOR PRINCIPAL (3 COLUMNAS) --- */
 main {
     max-width: 1400px;
     width: 100%;
     background: #ffffff;
-    padding: 30px 30px;
+    padding: 30px;
     border-radius: 24px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid #f0e6d8;
     margin-bottom: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr !important; /* Forzamos 3 columnas */
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
 }
 
-/* Asegurar que las columnas ocupen todo el espacio */
+/* --- COLUMNAS --- */
 .columna-1,
 .columna-2,
 .columna-3 {
@@ -41,7 +41,7 @@ main {
 }
 
 /* ============================================================ */
-/* ===== LOGO INTEGRADO (con degradado) ===== */
+/* ===== LOGO INTEGRADO ===== */
 /* ============================================================ */
 .logo-integrado {
     text-align: center;
@@ -99,7 +99,7 @@ main {
     letter-spacing: 1px;
 }
 
-/* --- TÍTULOS CON DEGRADADO --- */
+/* --- TÍTULOS --- */
 h2 {
     font-family: 'Oswald', 'Segoe UI', sans-serif;
     font-size: 1.5rem;
@@ -139,7 +139,7 @@ h3 {
 }
 
 /* ============================================================ */
-/* ===== SECCIÓN DESTACADA: ALITAS & BONELESS ===== */
+/* ===== SECCIÓN ALITAS ===== */
 /* ============================================================ */
 #alitas {
     position: relative;
@@ -175,7 +175,7 @@ h3 {
     font-size: 1.4rem;
 }
 
-/* Etiquetas con degradado */
+/* Etiquetas */
 .etiqueta-destacada {
     display: inline-block;
     background: linear-gradient(135deg, #d32f2f, #b71c1c);
@@ -206,7 +206,7 @@ h3 {
     box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
 }
 
-/* Productos destacados (Alitas) */
+/* Productos destacados */
 .producto-destacado {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(2px);
@@ -242,7 +242,7 @@ h3 {
     letter-spacing: 0.5px;
 }
 
-/* Grid de precios */
+/* Precios grid */
 .precios-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -470,6 +470,35 @@ h3 {
 }
 
 /* ============================================================ */
+/* ===== WHATSAPP BOTONES ===== */
+/* ============================================================ */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25D366;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn .icono-wa {
+    font-size: 1.6rem;
+}
+
+/* ============================================================ */
 /* ===== PIE DE PÁGINA ===== */
 /* ============================================================ */
 footer {
@@ -516,88 +545,1167 @@ a:hover {
 /* ============================================================ */
 /* ===== RESPONSIVE ===== */
 /* ============================================================ */
+
+/* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
     main {
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr;
         gap: 25px;
+        padding: 25px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 2.4rem;
     }
 }
 
+/* Móviles grandes y tablets pequeñas */
 @media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    
     main {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
         gap: 20px;
         padding: 20px 16px;
-        max-width: 100%;
+        border-radius: 16px;
     }
-
-    body { padding: 14px; }
-
+    
     .logo-integrado h1 {
         font-size: 2.2rem;
     }
-
+    
     .logo-integrado img {
         max-width: 120px;
     }
-
-    h2 { font-size: 1.3rem; }
-
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
     #alitas {
         padding: 18px 14px;
         border-radius: 14px;
     }
-
+    
     #alitas h2 {
         font-size: 1.3rem;
     }
-
+    
     .producto-destacado {
         padding: 10px 12px;
     }
-
+    
     .precios-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;
     }
-
+    
     .precio-item .precio {
         font-size: 1rem;
     }
-
+    
     .sabores-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    .whatsapp-btn {
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+    
+    .whatsapp-btn .icono-wa {
+        font-size: 1.4rem;
+    }
+    
+    .extras-grid span {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    footer {
+        padding: 14px 16px;
+    }
+    
+    footer p {
+        font-size: 0.85rem;
+    }
+    
+    footer p:first-of-type {
+        font-size: 0.95rem;
     }
 }
 
+/* Móviles pequeños */
 @media (max-width: 480px) {
-    .precios-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 4px;
+    body {
+        padding: 8px;
     }
-
-    .precio-item {
-        padding: 4px 6px;
+    
+    main {
+        padding: 14px 12px;
+        gap: 16px;
+        border-radius: 12px;
     }
-
-    .precio-item .precio {
-        font-size: 0.9rem;
-    }
-
-    .sabores-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .productos-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .extras-grid span {
-        font-size: 0.7rem;
-        padding: 2px 10px;
-    }
-
+    
     .logo-integrado h1 {
         font-size: 1.8rem;
     }
+    
+    .logo-integrado .slogan {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo-integrado .tagline {
+        font-size: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        padding-bottom: 4px;
+    }
+    
+    h3 {
+        font-size: 0.85rem;
+    }
+    
+    #alitas {
+        padding: 14px 10px;
+    }
+    
+    #alitas h2 {
+        font-size: 1.1rem;
+    }
+    
+    .precios-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3px;
+    }
+    
+    .precio-item {
+        padding: 4px 6px;
+    }
+    
+    .precio-item .pzas {
+        font-size: 0.6rem;
+    }
+    
+    .precio-item .precio {
+        font-size: 0.85rem;
+    }
+    
+    .sabores-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+    }
+    
+    .sabor-item {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+    
+    .sabor-nombre {
+        font-size: 0.75rem;
+    }
+    
+    .picor {
+        font-size: 0.7rem;
+    }
+    
+    .incluye {
+        font-size: 0.7rem;
+        padding: 2px 12px;
+    }
+    
+    .producto-header .nombre {
+        font-size: 0.85rem;
+    }
+    
+    .producto-header .precio {
+        font-size: 0.85rem;
+    }
+    
+    .descripcion {
+        font-size: 0.7rem;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 8px;
+    }
+    
+    .productos-grid .producto-header .nombre {
+        font-size: 0.8rem;
+    }
+    
+    .productos-grid .producto-header .precio {
+        font-size: 0.8rem;
+    }
+    
+    .extras {
+        padding: 10px 12px;
+    }
+    
+    .extras h3 {
+        font-size: 0.8rem;
+    }
+    
+    .extras-grid span {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        gap: 10px;
+    }
+    
+    .whatsapp-btn .icono-wa {
+        font-size: 1.2rem;
+    }
+    
+    .etiqueta-destacada {
+        font-size: 0.55rem;
+        padding: 3px 12px;
+    }
+    
+    .etiqueta-complemento {
+        font-size: 0.5rem;
+        padding: 2px 10px;
+    }
+    
+    .producto-destacado .nombre {
+        font-size: 0.95rem;
+    }
+    
+    .producto-destacado .icono {
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        padding: 12px 14px;
+        border-radius: 12px;
+    }
+    
+    footer p {
+        font-size: 0.75rem;
+    }
+    
+    footer p:first-of-type {
+        font-size: 0.85rem;
+    }
+    
+    footer .copyright {
+        font-size: 0.65rem;
+    }
 }
+
+/* Pantallas muy pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+    .precios-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+    }
+    
+    .sabores-grid {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-btn {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+    }
+}
+
+/* Mejoras de usabilidad en táctil */
+@media (hover: none) {
+    .producto-destacado:hover {
+        transform: none;
+    }
+    
+    .precio-item:hover {
+        transform: none;
+    }
+    
+    .extras-grid span:/* --- ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fcf8f0;
+    color: #4e342e;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- CONTENEDOR PRINCIPAL (3 COLUMNAS) --- */
+main {
+    max-width: 1400px;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0e6d8;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+/* --- COLUMNAS --- */
+.columna-1,
+.columna-2,
+.columna-3 {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* ============================================================ */
+/* ===== LOGO INTEGRADO ===== */
+/* ============================================================ */
+.logo-integrado {
+    text-align: center;
+    padding: 10px 0 15px 0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #d32f2f, #ff9800, #d32f2f) 1;
+    margin-bottom: 8px;
+}
+
+.logo-integrado img {
+    max-width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto 4px;
+    filter: drop-shadow(0 4px 12px rgba(211, 47, 47, 0.15));
+}
+
+.logo-integrado h1 {
+    font-family: 'Fredoka One', 'Oswald', cursive;
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #d32f2f 0%, #ff6f00 50%, #d32f2f 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    margin: 2px 0;
+    text-shadow: none;
+    animation: gradienteMovil 4s ease-in-out infinite;
+}
+
+@keyframes gradienteMovil {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo-integrado .slogan {
+    font-family: 'Oswald', 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e65100;
+    margin: 2px 0;
+}
+
+.logo-integrado .tagline {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #8d6e63;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* --- TÍTULOS --- */
+h2 {
+    font-family: 'Oswald', 'Segoe UI', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #b71c1c, #e65100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 6px;
+    margin: 0 0 12px 0;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Oswald', 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4e342e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 14px 0 6px 0;
+}
+
+.subtitulo {
+    font-size: 0.85rem;
+    color: #8d6e63;
+    margin-top: -8px;
+    margin-bottom: 12px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* ============================================================ */
+/* ===== SECCIÓN ALITAS ===== */
+/* ============================================================ */
+#alitas {
+    position: relative;
+    background-image: url('foto-alitas-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 24px 20px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#alitas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+#alitas > * {
+    position: relative;
+    z-index: 2;
+}
+
+#alitas h2 {
+    margin-top: 0;
+    border-bottom-color: #d32f2f;
+    font-size: 1.4rem;
+}
+
+/* Etiquetas */
+.etiqueta-destacada {
+    display: inline-block;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 2px;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+}
+
+.etiqueta-complemento {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9800, #e65100);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-bottom: 2px;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+/* Productos destacados */
+.producto-destacado {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(211, 47, 47, 0.12);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-destacado:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(211, 47, 47, 0.12);
+}
+
+.producto-destacado .producto-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.producto-destacado .icono {
+    font-size: 1.3rem;
+}
+
+.producto-destacado .nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #b71c1c;
+    letter-spacing: 0.5px;
+}
+
+/* Precios grid */
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.precio-item {
+    background: white;
+    border-radius: 8px;
+    padding: 6px 10px;
+    text-align: center;
+    border: 1px solid #f0e6d8;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.precio-item:hover {
+    background: #fff3e0;
+    transform: scale(1.02);
+}
+
+.precio-item .pzas {
+    display: block;
+    font-size: 0.7rem;
+    color: #8d6e63;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.precio-item .precio {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #d32f2f, #ff6f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sabores */
+.sabores {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 4px;
+}
+
+.sabores h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.sabores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.sabor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 10px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #f0e6d8;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.sabor-item:hover {
+    background: #fff3e0;
+}
+
+.sabor-nombre {
+    font-weight: 700;
+    color: #4e342e;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.picor {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.incluye {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #5d4037;
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    display: inline-block;
+    padding: 3px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ============================================================ */
+/* ===== PRODUCTOS GENERALES ===== */
+/* ============================================================ */
+.producto {
+    padding: 6px 0;
+    border-bottom: 1px dashed #f0e8e0;
+}
+
+.producto:last-child {
+    border-bottom: none;
+}
+
+.producto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.producto-header .nombre {
+    font-weight: 700;
+    color: #4e342e;
+    font-size: 0.95rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.producto-header .precio {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #d32f2f, #e65100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+}
+
+.descripcion {
+    font-size: 0.8rem;
+    color: #6d4c41;
+    margin: 2px 0 0 0;
+    padding-left: 4px;
+    font-weight: 500;
+}
+
+.producto.destacado {
+    background: linear-gradient(135deg, #fff8f0, #ffe0b2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 2px solid #ff9800;
+    margin-top: 4px;
+}
+
+.producto.destacado .nombre {
+    color: #e65100;
+}
+
+/* Extras */
+.extras {
+    background: linear-gradient(135deg, #faf3ea, #f5ebe0);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 12px;
+}
+
+.extras h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.extras h3 .precio {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(135deg, #d32f2f, #e65100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.extras-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.extras-grid span {
+    background: white;
+    padding: 3px 14px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4e342e;
+    border: 1px solid #e0d6cc;
+    transition: all 0.2s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.extras-grid span:hover {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border-color: #ff9800;
+    transform: scale(1.05);
+}
+
+/* ============================================================ */
+/* ===== FRAPPES & BEBIDAS ===== */
+/* ============================================================ */
+.productos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+    margin-bottom: 4px;
+}
+
+.productos-grid .producto {
+    border-bottom: none;
+    padding: 2px 0;
+}
+
+.productos-grid .producto-header .nombre {
+    font-size: 0.9rem;
+}
+
+.productos-grid .producto-header .precio {
+    font-size: 0.9rem;
+}
+
+/* ============================================================ */
+/* ===== WHATSAPP BOTONES ===== */
+/* ============================================================ */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25D366;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn .icono-wa {
+    font-size: 1.6rem;
+}
+
+/* ============================================================ */
+/* ===== PIE DE PÁGINA ===== */
+/* ============================================================ */
+footer {
+    max-width: 1400px;
+    width: 100%;
+    text-align: center;
+    background: #ffffff;
+    padding: 18px 20px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    border: 1px solid #f0e6d8;
+}
+
+footer p {
+    margin: 3px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+footer p:first-of-type {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+footer .copyright {
+    font-size: 0.75rem;
+    color: #a1887f;
+    margin-top: 6px;
+    font-weight: 400;
+}
+
+a {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+}
+
+/* ============================================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================================ */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* Móviles grandes y tablets pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 2.2rem;
+    }
+    
+    .logo-integrado img {
+        max-width: 120px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    #alitas {
+        padding: 18px 14px;
+        border-radius: 14px;
+    }
+    
+    #alitas h2 {
+        font-size: 1.3rem;
+    }
+    
+    .producto-destacado {
+        padding: 10px 12px;
+    }
+    
+    .precios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
+    .precio-item .precio {
+        font-size: 1rem;
+    }
+    
+    .sabores-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .whatsapp-btn {
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+    
+    .whatsapp-btn .icono-wa {
+        font-size: 1.4rem;
+    }
+    
+    .extras-grid span {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    footer {
+        padding: 14px 16px;
+    }
+    
+    footer p {
+        font-size: 0.85rem;
+    }
+    
+    footer p:first-of-type {
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+    
+    main {
+        padding: 14px 12px;
+        gap: 16px;
+        border-radius: 12px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 1.8rem;
+    }
+    
+    .logo-integrado .slogan {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo-integrado .tagline {
+        font-size: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        padding-bottom: 4px;
+    }
+    
+    h3 {
+        font-size: 0.85rem;
+    }
+    
+    #alitas {
+        padding: 14px 10px;
+    }
+    
+    #alitas h2 {
+        font-size: 1.1rem;
+    }
+    
+    .precios-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3px;
+    }
+    
+    .precio-item {
+        padding: 4px 6px;
+    }
+    
+    .precio-item .pzas {
+        font-size: 0.6rem;
+    }
+    
+    .precio-item .precio {
+        font-size: 0.85rem;
+    }
+    
+    .sabores-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+    }
+    
+    .sabor-item {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+    
+    .sabor-nombre {
+        font-size: 0.75rem;
+    }
+    
+    .picor {
+        font-size: 0.7rem;
+    }
+    
+    .incluye {
+        font-size: 0.7rem;
+        padding: 2px 12px;
+    }
+    
+    .producto-header .nombre {
+        font-size: 0.85rem;
+    }
+    
+    .producto-header .precio {
+        font-size: 0.85rem;
+    }
+    
+    .descripcion {
+        font-size: 0.7rem;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 8px;
+    }
+    
+    .productos-grid .producto-header .nombre {
+        font-size: 0.8rem;
+    }
+    
+    .productos-grid .producto-header .precio {
+        font-size: 0.8rem;
+    }
+    
+    .extras {
+        padding: 10px 12px;
+    }
+    
+    .extras h3 {
+        font-size: 0.8rem;
+    }
+    
+    .extras-grid span {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        gap: 10px;
+    }
+    
+    .whatsapp-btn .icono-wa {
+        font-size: 1.2rem;
+    }
+    
+    .etiqueta-destacada {
+        font-size: 0.55rem;
+        padding: 3px 12px;
+    }
+    
+    .etiqueta-complemento {
+        font-size: 0.5rem;
+        padding: 2px 10px;
+    }
+    
+    .producto-destacado .nombre {
+        font-size: 0.95rem;
+    }
+    
+    .producto-destacado .icono {
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        padding: 12px 14px;
+        border-radius: 12px;
+    }
+    
+    footer p {
+        font-size: 0.75rem;
+    }
+    
+    footer p:first-of-type {
+        font-size: 0.85rem;
+    }
+    
+    footer .copyright {
+        font-size: 0.65rem;
+    }
+}
+
+/* Pantallas muy pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+    .precios-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+    }
+    
+    .sabores-grid {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+    
+    .logo-integrado h1 {
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-btn {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+    }
+}
+
+/* Mejoras de usabilidad en táctil */
+@media (hover: none) {
+    .producto-destacado:hover {
+        transform: none;
+    }
+    
+    .precio-item:hover {
+        transform: none;
+    }
+    
+    .extras-grid span:hover {
+        transform: none;
+    }
+    
+    .whatsapp-btn:hover {
+        transform: none;
+    }
+    
+    /* Aumentar área de toque en móviles */
+    .whatsapp-btn {
+        padding: 18px 20px;
+    }
+    } {
+        transform: none;
+    }
+    
+    .whatsapp-btn:hover {
+        transform: none;
+    }
+    
+    /* Aumentar área de toque en móviles */
+    .whatsapp-btn {
+        padding: 18px 20px;
+    }
+        }
